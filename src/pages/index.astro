@@ -1,0 +1,84 @@
+---
+import { AppStoreBadges } from "../../app/components/AppStoreBadges";
+import { PlatformShowcase } from "../../app/components/PlatformShowcase";
+import { SiteFooter } from "../../app/components/SiteFooter";
+import { SiteHeader } from "../../app/components/SiteHeader";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <SiteHeader />
+  <main class="simple-landing">
+    <section class="landing-screen screen-hero">
+      <div class="shell hero-grid hero-grid--quiet">
+        <div class="hero-message">
+          <img class="hero-app-icon" src="/app-icon.png" alt="" width="72" height="72" />
+          <h1>The notes app your agents already know how to use.</h1>
+          <p class="hero-copy">
+            Plain Markdown in a git repository you own. Native on Mac, iPhone, and iPad.
+          </p>
+          <div class="hero-actions-simple"><AppStoreBadges /></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="landing-screen screen-how" id="how">
+      <div class="shell visual-how">
+        <div class="visual-heading">
+          <div>
+            <p class="eyebrow">How it works</p>
+            <h2>Your agent pushes. Together Notes pulls.</h2>
+          </div>
+          <p>
+            Switch between Mac, iPad, and iPhone to see the same repository become a native
+            notes app.
+          </p>
+        </div>
+        <PlatformShowcase client:load />
+        <div class="visual-flow" aria-label="Three-step sync flow">
+          <span><b>1</b> Agent writes Markdown</span>
+          <i aria-hidden="true">→</i>
+          <span><b>2</b> Git keeps the history</span>
+          <i aria-hidden="true">→</i>
+          <span><b>3</b> Your devices show the note</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="landing-screen screen-price" id="pricing">
+      <div class="shell price-screen-grid">
+        <div class="simple-price">
+          <p class="eyebrow">One purchase</p>
+          <h2>$19.99.<br />Once.</h2>
+          <p>
+            Editing forever on Mac, iPhone, and iPad. Family Sharing included. No subscription
+            and no sync fee.
+          </p>
+          <AppStoreBadges />
+          <small>Try everything free for 3 days. No account or card required.</small>
+        </div>
+        <div class="simple-faq" aria-label="Frequently asked questions">
+          <article>
+            <h3>Do I need to know git?</h3>
+            <p>No. Together Notes handles syncing and conflicts automatically.</p>
+          </article>
+          <article>
+            <h3>Where are my notes?</h3>
+            <p>
+              On your devices and on the git remote you choose. There is no Together Notes cloud.
+            </p>
+          </article>
+          <article>
+            <h3>Can I use it without an agent or remote?</h3>
+            <p>Yes. It is a complete local notes app on its own.</p>
+          </article>
+          <nav class="help-links" aria-label="Help and legal">
+            <a href="/support">Support →</a>
+            <a href="/privacy">Privacy →</a>
+          </nav>
+        </div>
+      </div>
+    </section>
+  </main>
+  <SiteFooter />
+</Layout>

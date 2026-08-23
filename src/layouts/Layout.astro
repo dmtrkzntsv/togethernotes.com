@@ -1,0 +1,52 @@
+---
+import "../../app/globals.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Together Notes — Markdown notes in a git repo your agents can use",
+  description = "A native Mac & iPhone notes app that stores everything as plain Markdown in a git repository you own — so your AI agents can read and write your notes.",
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const socialTitle = "The notes app your agents already know how to use";
+const socialDescription =
+  "Plain Markdown in your own git repo. Native on Mac and iPhone. Nothing is ever lost. $19.99, once.";
+const socialImage = new URL("/og.png", Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/app-icon.png" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:site_name" content="Together Notes" />
+    <meta property="og:title" content={socialTitle} />
+    <meta property="og:description" content={socialDescription} />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:image:width" content="1733" />
+    <meta property="og:image:height" content="910" />
+    <meta
+      property="og:image:alt"
+      content="Together Notes on iPhone showing an agent commit pulled into a research note"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={socialTitle} />
+    <meta name="twitter:description" content={socialDescription} />
+    <meta name="twitter:image" content={socialImage} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
