@@ -16,54 +16,36 @@ export default function Home() {
       <SiteHeader />
       <main className="simple-landing">
         <section className="landing-screen screen-hero">
-          <div className="shell hero-grid">
+          <div className="shell hero-grid hero-grid--quiet">
             <div className="hero-message">
-              <p className="eyebrow">Native on Mac, iPhone, and iPad</p>
+              <img className="hero-app-icon" src="/app-icon.png" alt="" width="72" height="72" />
               <h1>The notes app your agents already know how to use.</h1>
               <p className="hero-copy">
-                Together Notes stores every note as plain Markdown in a git repository you own.
-                Any agent that can read files and push a commit can read and write your notes.
+                Plain Markdown in a git repository you own. Native on Mac, iPhone, and iPad.
               </p>
-              <p className="hero-proof">No MCP server. No API keys. No rate limits.</p>
               <div className="hero-actions-simple">
                 <AppStoreBadges />
-                <span>Free 3-day trial · $19.99 once</span>
               </div>
             </div>
-            <PlatformShowcase />
           </div>
         </section>
 
         <section className="landing-screen screen-how" id="how">
-          <div className="shell simple-section-shell">
-            <div className="simple-heading">
-              <p className="eyebrow">How it works</p>
-              <h2>Notes on the surface. Plain files underneath.</h2>
-            </div>
-            <div className="simple-steps">
-              <article>
-                <span>01</span>
-                <h3>Your notes are files</h3>
-                <p>Every note is a Markdown file. Read it in any editor, search it with any tool, and keep it forever.</p>
-              </article>
-              <article>
-                <span>02</span>
-                <h3>The app is the window</h3>
-                <p>Together Notes gives those files a fast native editor, folders, checklists, tables, comments, and instant capture.</p>
-              </article>
-              <article>
-                <span>03</span>
-                <h3>Git keeps the history</h3>
-                <p>Every change is a commit. Review anything, revert anything, and keep both sides of a conflict.</p>
-              </article>
-            </div>
-            <div className="simple-proof">
+          <div className="shell visual-how">
+            <div className="visual-heading">
               <div>
-                <span className="live-dot" aria-hidden="true" />
-                <strong>Agent change pulled</strong>
-                <small>Your note appears on every device</small>
+                <p className="eyebrow">How it works</p>
+                <h2>Your agent pushes. Together Notes pulls.</h2>
               </div>
-              <code>write file → commit → push → done</code>
+              <p>Switch between Mac, iPad, and iPhone to see the same repository become a native notes app.</p>
+            </div>
+            <PlatformShowcase />
+            <div className="visual-flow" aria-label="Three-step sync flow">
+              <span><b>1</b> Agent writes Markdown</span>
+              <i aria-hidden="true">→</i>
+              <span><b>2</b> Git keeps the history</span>
+              <i aria-hidden="true">→</i>
+              <span><b>3</b> Your devices show the note</span>
             </div>
           </div>
         </section>
