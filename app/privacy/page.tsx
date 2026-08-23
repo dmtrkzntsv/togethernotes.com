@@ -1,0 +1,49 @@
+import type { Metadata } from "next";
+import { SiteFooter } from "../components/SiteFooter";
+import { SiteHeader } from "../components/SiteHeader";
+
+export const metadata: Metadata = {
+  title: "Privacy policy",
+  description: "Together Notes collects no data. Read the full privacy policy.",
+};
+
+export default function PrivacyPage() {
+  return (
+    <>
+      <SiteHeader simple />
+      <main className="legal-page">
+        <div className="shell legal-shell">
+          <p className="eyebrow">Effective August 22, 2026</p>
+          <h1>Privacy policy</h1>
+          <p className="lede">
+            Together Notes is built so that your data never has to pass through us — and it
+            doesn’t. We do not operate any servers, and we do not collect, store, transmit, sell,
+            or share any personal data.
+          </p>
+          <article className="legal-copy">
+            <h2>What the app stores, and where</h2>
+            <ul>
+              <li><strong>Your notes</strong> are plain Markdown files in a git repository. They live on your device and, only if you connect a remote, in the git repository you choose. We never see them; syncing happens directly between your device and your chosen git host.</li>
+              <li><strong>Git credentials</strong> — a GitHub sign-in token, or a password or token you enter for another remote — are stored in the system keychain on your device and are sent only to the git host they belong to.</li>
+              <li><strong>Settings and the trial record</strong> are stored on your device only.</li>
+            </ul>
+            <h2>What we collect</h2>
+            <p>Nothing. The app contains no analytics, no advertising, no tracking, no crash-reporting service of ours, and no account system of ours.</p>
+            <h2>Third parties</h2>
+            <p>If you connect a GitHub repository, your use of GitHub is governed by GitHub’s own terms and privacy policy. The app talks to GitHub solely to authenticate you using OAuth Device Flow, list your repositories, and push or pull your notes. The same applies to any other git host you connect.</p>
+            <p>Purchases are processed by Apple through the App Store. We receive no personal information about you from a purchase.</p>
+            <h2>Your data, your exit</h2>
+            <p>Your notes are ordinary files in an ordinary git repository. You can read, copy, move, or delete them at any time with any tool, with or without this app. Deleting the app deletes its on-device data; anything you pushed to your own remote remains yours, in your repository.</p>
+            <h2>Children</h2>
+            <p>Together Notes does not collect data from anyone, including children.</p>
+            <h2>Changes</h2>
+            <p>If this policy ever changes, the new version will be posted here with an updated effective date. Since the app collects nothing, a change could only ever narrow — or explain better — what is written here.</p>
+            <h2>Contact</h2>
+            <p>Questions: <a href="mailto:feedback@togethernotes.com">feedback@togethernotes.com</a></p>
+          </article>
+        </div>
+      </main>
+      <SiteFooter />
+    </>
+  );
+}

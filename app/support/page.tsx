@@ -1,0 +1,38 @@
+import type { Metadata } from "next";
+import { SiteFooter } from "../components/SiteFooter";
+import { SiteHeader } from "../components/SiteHeader";
+
+export const metadata: Metadata = {
+  title: "Support",
+  description: "Help and contact information for Together Notes.",
+};
+
+export default function SupportPage() {
+  return (
+    <>
+      <SiteHeader simple />
+      <main className="legal-page">
+        <div className="shell legal-shell">
+          <p className="eyebrow">Together Notes support</p>
+          <h1>How can we help?</h1>
+          <p className="lede">Together Notes keeps your notes as plain Markdown files in a git repository you own. Here are answers to the most common questions.</p>
+          <article className="legal-copy">
+            <h2>Where are my notes?</h2>
+            <p>In a git repository. On iPhone and iPad it lives inside the app’s Documents; on the Mac, under Application Support. If you connected a remote such as GitHub, every note is also in that repository — open it with any editor or on your git host.</p>
+            <h2>Do I need an account?</h2>
+            <p>No. A local profile works forever without any account. Connecting GitHub or another git remote is optional and only used to sync your own repository.</p>
+            <h2>What does the purchase unlock?</h2>
+            <p>Everything, permanently, on Mac, iPhone, and iPad, with Family Sharing. The 3-day trial is fully featured; after it ends the app is read-only — your notes stay readable and keep syncing — until you unlock.</p>
+            <h2>Purchases on a new device?</h2>
+            <p>Tap Unlock → Restore Purchases while signed into the same Apple Account.</p>
+            <h2>Something looks wrong or there is a sync conflict?</h2>
+            <p>Nothing is ever lost: every version of every note is kept in git history. Open a note’s History in the app, or your repository’s history on your git host.</p>
+            <h2>Contact</h2>
+            <p>Email <a href="mailto:feedback@togethernotes.com">feedback@togethernotes.com</a>. Include your app version from Settings and what you expected versus what happened.</p>
+          </article>
+        </div>
+      </main>
+      <SiteFooter />
+    </>
+  );
+}
