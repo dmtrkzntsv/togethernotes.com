@@ -57,25 +57,33 @@ export function PlatformShowcase() {
     setSlide(0);
   }
 
-  function movePlatform(direction: number) {
-    const current = order.indexOf(platform);
-    choose(order[(current + direction + order.length) % order.length]);
+  function moveSlide(direction: number) {
+    const nextSlide = slide + direction;
+
+    if (nextSlide >= 0 && nextSlide < active.images.length) {
+      setSlide(nextSlide);
+      return;
+    }
+
+    const currentPlatform = order.indexOf(platform);
+    const nextPlatform = order[
+      (currentPlatform + direction + order.length) % order.length
+    ];
+
+    setPlatform(nextPlatform);
+    setSlide(direction > 0 ? 0 : platforms[nextPlatform].images.length - 1);
   }
 
   return (
     <div className="showcase" id="demo">
-      <div className="showcase-bar">
-        <div>
-          <span className="live-dot" aria-hidden="true" />
-          <span>Repository connected</span>
-        </div>
+      <div className="showcase-controls">
         <div
           className="platform-tabs"
           role="tablist"
           aria-label="Choose a device"
           onKeyDown={(event) => {
-            if (event.key === "ArrowLeft") movePlatform(-1);
-            if (event.key === "ArrowRight") movePlatform(1);
+            if (event.key === "ArrowLeft") moveSlide(-1);
+            if (event.key === "ArrowRight") moveSlide(1);
           }}
         >
           {order.map((key) => (
@@ -91,10 +99,17 @@ export function PlatformShowcase() {
             </button>
           ))}
         </div>
-        <span className="sync-state">Synced</span>
       </div>
 
       <div className={`device-stage device-stage--${platform}`}>
+        <button
+          type="button"
+          className="carousel-arrow carousel-arrow--previous"
+          aria-label="Previous screenshot"
+          onClick={() => moveSlide(-1)}
+        >
+          ←
+        </button>
         <div className={`device-frame device-frame--${platform}`}>
           <img
             key={active.images[slide].src}
@@ -103,16 +118,15 @@ export function PlatformShowcase() {
             width={platform === "mac" ? 1440 : platform === "ipad" ? 1032 : 660}
             height={platform === "mac" ? 900 : platform === "ipad" ? 1376 : 1434}
           />
-          {platform === "iphone" && slide === 2 && (
-            <div className="commit-toast" role="status">
-              <span>✓</span>
-              <div>
-                <strong>Agent commit pulled</strong>
-                <small>Add research notes</small>
-              </div>
-            </div>
-          )}
         </div>
+        <button
+          type="button"
+          className="carousel-arrow carousel-arrow--next"
+          aria-label="Next screenshot"
+          onClick={() => moveSlide(1)}
+        >
+          →
+        </button>
       </div>
 
       <div className="showcase-caption">

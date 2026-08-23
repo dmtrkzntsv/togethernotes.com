@@ -12,8 +12,6 @@ export function SiteHeader({ simple = false }: { simple?: boolean }) {
           <nav className="nav-links" aria-label="Main navigation">
             <a href="#how">How it works</a>
             <a href="#pricing">Pricing</a>
-            <a href="/support">Support</a>
-            <a href="/privacy">Privacy</a>
           </nav>
         )}
         <div className="nav-download">
