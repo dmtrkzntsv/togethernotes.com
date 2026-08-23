@@ -1,6 +1,6 @@
 # Together Notes website
 
-Marketing, privacy, support, and agent-spec pages for [togethernotes.com](https://togethernotes.com).
+Marketing, privacy, and support pages for [togethernotes.com](https://togethernotes.com).
 
 ## Development
 

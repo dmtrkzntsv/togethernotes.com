@@ -14,10 +14,6 @@ export function SiteFooter() {
         </div>
         <div className="footer-links" aria-label="Footer links">
           <a href="mailto:feedback@togethernotes.com">feedback@togethernotes.com</a>
-          <a href="/agents">Agent spec</a>
-          <a href="https://github.com/dmtrkzntsv/together-notes" rel="noreferrer">
-            Template repository
-          </a>
           <a href="/support">Support</a>
           <a href="/privacy">Privacy</a>
         </div>

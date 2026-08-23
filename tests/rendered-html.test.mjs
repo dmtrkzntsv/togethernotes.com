@@ -21,12 +21,12 @@ test("server-renders the Together Notes landing page", async () => {
   const html = await response.text();
   assert.match(html, /Together Notes — Markdown notes in a git repo your agents can use/);
   assert.match(html, /The notes app your agents already know how to use/);
-  assert.match(html, /\$19\.99\. Once\./);
+  assert.match(html, /\$19\.99\.<br\/?>(?:<!-- -->)?Once\./);
   assert.match(html, /Download on the App Store/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/);
 });
 
-for (const path of ["/privacy", "/support", "/agents"]) {
+for (const path of ["/privacy", "/support"]) {
   test(`server-renders ${path}`, async () => {
     const response = await render(path);
     assert.equal(response.status, 200);

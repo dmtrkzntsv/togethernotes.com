@@ -11,9 +11,9 @@ export function SiteHeader({ simple = false }: { simple?: boolean }) {
         {!simple && (
           <nav className="nav-links" aria-label="Main navigation">
             <a href="#how">How it works</a>
-            <a href="#features">Features</a>
-            <a href="#agents">For agents</a>
-            <a href="#faq">FAQ</a>
+            <a href="#pricing">Pricing</a>
+            <a href="/support">Support</a>
+            <a href="/privacy">Privacy</a>
           </nav>
         )}
         <div className="nav-download">
