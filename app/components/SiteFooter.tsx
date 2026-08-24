@@ -19,7 +19,9 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="shell legal-row">
-        <span>© 2026 Dmitry Kuznetsov</span>
+        <span>
+          © 2026 <a href="https://kuznetsov.dev">Dmitry Kuznetsov</a>
+        </span>
         <span>
           Apple, the Apple logo, App Store, Mac, iPhone, and iPad are trademarks of Apple Inc.
         </span>
