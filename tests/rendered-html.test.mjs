@@ -21,3 +21,13 @@ for (const path of ["privacy", "support"]) {
     assert.match(html, /Together Notes/);
   });
 }
+
+for (const path of ["", "privacy", "support"]) {
+  test(`includes the analytics script on /${path}`, async () => {
+    const html = await builtPage(path);
+    assert.match(
+      html,
+      /<script defer src="https:\/\/t\.kuznetsov\.dev\/js\/script\.js" data-key="ak_18599104773b9b71ddeb627da7054467" data-identity="anonymous"><\/script>/,
+    );
+  });
+}
