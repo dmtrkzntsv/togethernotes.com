@@ -27,7 +27,7 @@ for (const path of ["", "privacy", "support"]) {
     const html = await builtPage(path);
     assert.match(
       html,
-      /<script defer src="https:\/\/t\.kuznetsov\.dev\/js\/script\.js" data-key="ak_18599104773b9b71ddeb627da7054467" data-identity="anonymous"><\/script>/,
+      /<script defer src="https:\/\/t\.kuznetsov\.dev\/js\/twillingate\.js" data-key="ak_18599104773b9b71ddeb627da7054467" data-identity="anonymous"><\/script>/,
     );
   });
 }
